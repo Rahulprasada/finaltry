@@ -125,8 +125,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",  # Add this if you have a global static directory
+    os.path.join(BASE_DIR, "static"),
 ]
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -140,10 +141,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 ROOT_URLCONF = 'myproj.urls'
-
-
-import os
-BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 STATICFILES_FINDERS = [
